@@ -1,4 +1,33 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
+<div class="hero"></div>
+        <div class="container">
+            <div class="row">
+                <div class="span12 hero-content">
+                    <h1>Wedding planning is expensive.</h1>
+                    <h2>Plan the wedding of your dreams—</h2>
+                    <h2>without giving up your other ones.</h2><br />
+
+ <% if not user_signed_in? %>
+    <%= link_to 'Sign up', new_user_registration_path %>
+  <% end %>
+                    
+                    <br /><br />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span4">
+                    <h2>Personalize</h2>
+                    <p>Every wedding is different. Hitched shows you what's important to you without weighing you down with the details. Pick the events your wedding will feature and don't worry about the rest.</p>
+                </div>
+                <div class="span4">
+                    <h2>Plan</h2>
+                    <p>Hitched offers professional advice about the major events in your wedding. We've worked with couples who have gone through the same process and know how to make it easy for you to find the right photographer, caterer and venue while suggesting a comfortable timeline to get it all done.</p>
+               </div>
+                <div class="span4">
+                    <h2>Present</h2>
+                    <p>It's easy to share your decisions with your friends and family. Whenever you decide on an important date or want feedback on everything from dinner to dresses, it's easy to get feedback from the people who mean the most to you.</p>
+                </div>
+            </div>
+
+            <hr>
+        </div>
