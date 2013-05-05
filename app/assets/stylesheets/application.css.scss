@@ -23,3 +23,218 @@
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
   box-shadow: 0 1px 2px rgba(0,0,0,.15);
 }
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+* {
+  font-family: "Lato", "Helvetica Neue", "Arial", sans-serif;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
+a {
+  color: #3caeb3;
+  &:hover {
+    color: #3caeb3;
+  }
+}
+
+[class*="span"].border {
+  border-right: 1px solid #eee;
+  + [class*="span"] {
+    margin-left: 19px;
+  }
+}
+
+.panel {
+  background-color: #eee;
+}
+
+.navbar .brand {
+  font-family: 'Lobster', "Helvetica Neue", "Arial", sans-serif;
+  font-size: 2em;
+  img {
+    height: 24px;
+    margin-right: 4px;
+    margin-top: -4px;
+  }
+}
+
+#timeline {
+  height: 560px;
+}
+
+.axis {
+  path, line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+}
+
+.grid {
+  path {
+    stroke-width: 0;
+    opacity: 0.7;
+  }
+  .tick {
+    stroke: #eee;
+    opacity: 0.7;
+  }
+}
+
+.months .tick {
+  stroke: #999;
+}
+
+#tooltip {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  padding: 10px 12px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  &.hidden {
+    display: none;
+  }
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    pointer-events: all;
+  }
+  hr {
+    margin: 5px 0;
+  }
+  #name {
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+  a {
+    pointer-events: all;
+  }
+  .arrow {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    bottom: -11px;
+    left: 50%;
+    margin-left: -11px;
+    border-top-color: #999;
+    border-top-color: rgba(0, 0, 0, 0.25);
+    border-width: 11px;
+    border-bottom-width: 0;
+    &:after {
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-color: transparent;
+      border-style: solid;
+      bottom: -9px;
+      margin-left: -10px;
+      border-top-color: #ffffff;
+      border-bottom-width: 0;
+      border-width: 10px;
+      content: "";
+    }
+  }
+}
+
+.passed {
+  pointer-events: none;
+}
+
+.hero {
+  position: absolute;
+  top: 40px;
+  height: 360px;
+  width: 100%;
+  background: url("../img/hero_image.png") no-repeat center bottom fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index: -2;
+}
+
+.hero-content {
+  padding-top: 120px;
+  h1 {
+    color: #fff;
+    -webkit-text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    -khtml-text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    -moz-text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    -ms-text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    -o-text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  }
+  h2 {
+    color: #fff;
+    -webkit-text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    -khtml-text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    -moz-text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    -ms-text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    -o-text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    font-weight: 300;
+    line-height: .8em;
+  }
+}
+
+@media (max-width: 979px) {
+  .hero {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+}
+
+* {
+  -webkit-transition: all 0.3s ease-out;
+  /* Chrome 1-25, Safari 3.2+ */
+  -moz-transition: all 0.3s ease-out;
+  /* Firefox 4-15 */
+  -o-transition: all 0.3s ease-out;
+  /* Opera 10.50–12.00 */
+  transition: all 0.3s ease-out;
+  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+#comments-container {
+  padding-left: 20px;
+}
+
+.clearfix {
+  &:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
+  display: inline-block;
+}
+
+html[xmlns] .clearfix {
+  display: block;
+}
+
+* html .clearfix {
+  height: 1%;
+}
