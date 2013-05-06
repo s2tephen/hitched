@@ -1,0 +1,5 @@
+<li>
+	<div class="username"><strong><%= comment.user.name %></strong></div>
+	<div class="comment"><%= comment.content %></div>
+  	<div class="timestamp">Posted <%= time_ago_in_words(comment.created_at) %> ago.</div><br />
+</li>
