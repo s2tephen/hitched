@@ -2,6 +2,7 @@
 <div class="row">
 	<div class="span8">
 		<h3><%= @event.name %></h3>
+		<%= link_to 'Edit Event', edit_event_path(@event) %>
 		<% if !@event.date.nil? %>
 			<strong>Date</strong>&emsp;<%= @event.date %><br />
 		<% end %>
@@ -27,8 +28,11 @@
 				<%= render @comments %>
 			</ul>
 			<%= will_paginate @comments %>
+
 		<% else %>
 			No comments.
 		<% end %>
 	</div>
 </div>
+
+ 

@@ -4,6 +4,9 @@
 
   <% if user_signed_in? %>
   <li>
+    <%= link_to "Events", events_path %>
+  </li>
+  <li>
     <%= link_to 'Settings', edit_user_registration_path %>
   </li>
   <% if current_user.has_role? :admin %>
