@@ -4,5 +4,5 @@ Hitched::Application.routes.draw do
   end
   root :to => "home#index"
   devise_for :users
-  resources :users, :events
+  resources :users, :events, :weddings
 end

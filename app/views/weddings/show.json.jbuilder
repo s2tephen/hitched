@@ -1,0 +1,1 @@
+json.events @wedding.events, :date, :name, :category
