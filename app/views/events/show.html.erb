@@ -2,5 +2,33 @@
 <div class="row">
 	<div class="span8">
 		<h3><%= @event.name %></h3>
+		<% if !@event.date.nil? %>
+			<strong>Date</strong>&emsp;<%= @event.date %><br />
+		<% end %>
+		<% if !@event.time.nil? %>
+			<strong>Time</strong>&emsp;<%= @event.time.strftime("%I:%M %p") %><br />
+		<% end %>
+		<% if !@event.location.nil? %>
+			<strong>Location</strong>&emsp;<%= @event.location %><br />
+		<% end %>
+		<% if !@event.description.nil? %>
+			<br /><p><%= @event.description %></p>
+		<% end %>
+		<% if !@event.notes.nil? %>
+			<hr />
+			<h4>Notes from Hitched</h4>
+			<p><%= @event.notes %></p>
+		<% end %>
+	</div>
+	<div class="span4">
+		<h3>Comments</h3>
+		<% if @event.comments.any? %>
+			<ul class="comments">
+				<%= render @comments %>
+			</ul>
+			<%= will_paginate @comments %>
+		<% else %>
+			No comments.
+		<% end %>
 	</div>
 </div>
