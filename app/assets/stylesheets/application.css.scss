@@ -9,7 +9,9 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require jquery.ui.datepicker
  *= require_tree .
+
 */
 
 .content {
@@ -168,7 +170,7 @@ a {
   -o-background-size: cover;
   background-size: cover;
   z-index: -1;
-  padding-left:80px;
+  padding-left:70px;
 }
 
 .hero-content {
