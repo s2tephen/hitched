@@ -1,10 +1,10 @@
 class WeddingsController < ApplicationController
-  def show
-    @weddings = Wedding.find(params[:id])
-  end
-
   def index
     @weddings = Wedding.all
+  end
+
+  def show
+    @weddings = Wedding.find(params[:id])
   end
 
   def new
@@ -24,5 +24,13 @@ class WeddingsController < ApplicationController
     @weddings = Wedding.find(params[:id])
     @weddings.update_attributes!(params[:wedding])
     redirect_to weddings_url, notice: "Wedding was successfully updated."
+  end
+
+  def destroy
+    @weddings = Wedding.destroy(params[:id])
+    respond_to do |format|
+      format.html { redirect_to weddings_url }
+      format.js
+    end
   end
 end

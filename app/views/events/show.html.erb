@@ -1,29 +1,29 @@
-<% provide(:title, @event.name) %>
+<% provide(:title, @events.name) %>
 <div class="row">
 	<div class="span8">
-		<h3><%= @event.name %></h3>
-		<%= link_to 'Edit Event', edit_event_path(@event) %>
-		<% if !@event.date.nil? %>
-			<strong>Date</strong>&emsp;<%= @event.date %><br />
+		<h3><%= @events.name %></h3>
+		<%= link_to 'Edit Event', edit_event_path(@events) %>
+		<% if !@events.date.nil? %>
+			<strong>Date</strong>&emsp;<%= @events.date %><br />
 		<% end %>
-		<% if !@event.time.nil? %>
-			<strong>Time</strong>&emsp;<%= @event.time.strftime("%I:%M %p") %><br />
+		<% if !@events.time.nil? %>
+			<strong>Time</strong>&emsp;<%= @events.time.strftime("%I:%M %p") %><br />
 		<% end %>
-		<% if !@event.location.nil? %>
-			<strong>Location</strong>&emsp;<%= @event.location %><br />
+		<% if !@events.location.nil? %>
+			<strong>Location</strong>&emsp;<%= @events.location %><br />
 		<% end %>
-		<% if !@event.description.nil? %>
-			<br /><p><%= @event.description %></p>
+		<% if !@events.description.nil? %>
+			<br /><p><%= @events.description %></p>
 		<% end %>
-		<% if !@event.notes.nil? %>
+		<% if !@events.notes.nil? %>
 			<hr />
 			<h4>Notes from Hitched</h4>
-			<p><%= @event.notes %></p>
+			<p><%= @events.notes %></p>
 		<% end %>
 	</div>
 	<div class="span4">
 		<h3>Comments</h3>
-		<% if @event.comments.any? %>
+		<% if @events.comments.any? %>
 			<ul class="comments">
 				<%= render @comments %>
 			</ul>

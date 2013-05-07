@@ -5,15 +5,23 @@ class EventsController < ApplicationController
 
   def show
     @events = Event.find(params[:id])
-    @comments = @event.comments.paginate(page: params[:page])
-    if @event.enabled != true
-      redirect_to root_path
-    end
+    # @comments = @events.comments.paginate(page: params[:page])
+    # if @events.enabled != true
+    #   redirect_to root_path
+    # end
+  end
+
+  def new
+    @events = Event.new
   end
 
   def create
     @events = Event.create!(params[:event])
     redirect_to events_url
+  end
+
+    def edit
+    @events = Event.find(params[:id])
   end
 
   def update
@@ -23,6 +31,8 @@ class EventsController < ApplicationController
       format.html { redirect_to events_url }
       format.js
     end
+
+    redirect_to events_url, notice: "Event was successfully updated."
   end
 
   def destroy
