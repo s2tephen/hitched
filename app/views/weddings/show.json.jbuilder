@@ -1,1 +1,1 @@
-json.events @wedding.events, :date, :name, :category
+json.events @weddings.events, :date, :name, :category

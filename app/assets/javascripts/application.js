@@ -15,4 +15,5 @@
 //= require jquery.ui.datepicker
 //= require bootstrap
 //= require_tree .
-
+//= require timeline
+//= require d3.v3.min

@@ -17,48 +17,61 @@
       <a href="event.html">View event &raquo;</a>
       <div class="arrow"></div>
     </div>
-    <div id="timeline" class="span12">
+    <div class="span12">
       <h2>Your Timeline</h2>
+      <div class="row">
+        <div id="sidebar" class="span3">
+          <h4>TASKS</h4>
+          <div class="timeline-toggle" id="toggle-help">click to toggle</div>
+          <div class="timeline-toggle" id="toggle-guests"><span class="label">&nbsp;</span>&emsp;Guests</div>
+          <div class="timeline-toggle" id="toggle-food"><span class="label">&nbsp;</span>&emsp;Food & Drinks</div>
+          <div class="timeline-toggle" id="toggle-decorations"><span class="label">&nbsp;</span>&emsp;Flowers & Decorations</div>
+          <div class="timeline-toggle" id="toggle-bride"><span class="label">&nbsp;</span>&emsp;Bride</div>
+          <div class="timeline-toggle" id="toggle-ceremony"><span class="label">&nbsp;</span>&emsp;Ceremony</div>
+        </div>
+        <div id="timeline" class="span9"></div>
+      </div>
+
+      <h2>List View</h2>
       <table>
-  <tr>
-    <th>Name</th>
-    <th>Category</th>
-    <th>Date</th>
-    <th>Time</th>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Date</th>
+          <th>Time</th>
 
-    <th>Location</th>
-    <th>Description</th>
-    <th>Notes</th>
+          <th>Location</th>
+          <th>Description</th>
+          <th>Notes</th>
 
-    <th></th>
-    <th></th>
-  </tr>
+          <th></th>
+          <th></th>
+        </tr>
 
-  <% @events.each do |event| %>
-    <% if event.enabled != true %>
-      <tr>
-        <td><%= link_to event.name, event %></td>
-        <td><%= event.category %></td>
-        <td><%= event.date %></td>
-        <td><%= event.time %></td>
+        <% @events.each do |event| %>
+          <% if event.enabled == true %>
+            <tr>
+              <td><%= link_to event.name, event %></td>
+              <td><%= event.category %></td>
+              <td><%= event.date %></td>
+              <td><%= event.time %></td>
 
-        <td><%= event.location %></td>
-        <td><%= event.description %></td>
-        <td><%= event.notes %></td>
+              <td><%= event.location %></td>
+              <td><%= event.description %></td>
+              <td><%= event.notes %></td>
 
-        <!--     :category, :date, :description, :location, :name, :notes, :time, :wedding_id, :complete -->
+              <!--     :category, :date, :description, :location, :name, :notes, :time, :wedding_id, :complete -->
 
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Delete', event, confirm: 'Are you sure?', method: :delete %></td>
-      </tr>
-    <% end %>
-  <% end %>
-</table>
+              <td><%= link_to 'Edit', edit_event_path(event) %></td>
+              <td><%= link_to 'Delete', event, confirm: 'Are you sure?', method: :delete %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </table>
     </div>
   </div>
 
 </div> <!-- /container -->
 
-
-
 <%= link_to 'New Event', new_event_path %>
+
