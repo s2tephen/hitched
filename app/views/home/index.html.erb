@@ -5,7 +5,7 @@
             <h2>without giving up your other ones.</h2><br/>
 
             <% if not user_signed_in? %>
-            <%= link_to 'Sign up', new_user_registration_path %>
+            <%= button_to 'Sign up', new_user_registration_path, :class => 'btn-primary', :method => :get %>
             <% end %>
         </div>
         <div class="row hero"></div>
