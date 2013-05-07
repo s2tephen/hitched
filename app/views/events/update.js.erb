@@ -1,0 +1,5 @@
+<% if @event.complete? %>
+  $('#edit_event_<%= @event.id %>').appendTo('#complete_events');
+<% else %>
+  $('#edit_event_<%= @event.id %>').appendTo('#incomplete_events');
+<% end %>

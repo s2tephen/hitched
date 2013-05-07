@@ -1,0 +1,3 @@
+$('#new_event')[0].reset();
+$('#incomplete_events').append('<%= j render(@event) %>');
+$('#edit_event_<%= @event.id %>').submitOnCheck();
