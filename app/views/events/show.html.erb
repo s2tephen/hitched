@@ -2,7 +2,7 @@
 <div class="row">
 	<div class="span8">
 		<h3><%= @events.name %></h3>
-		<%= link_to 'Edit Event', edit_event_path(@events) %>
+		<%= link_to 'Edit Event', edit_event_path(@events) %><br />
 		<% if !@events.date.nil? %>
 			<strong>Date</strong>&emsp;<%= @events.date %><br />
 		<% end %>

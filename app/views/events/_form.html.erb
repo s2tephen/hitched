@@ -1,9 +1,12 @@
-<%= form_for @events do |f| %>
-  <div class="field">
-    <%= f.label :date %><br />
-    <%= f.text_field :date %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+<%= simple_form_for(@events, :html => {:class => 'form-vertical' }) do |f| %>
+  <%= f.input :name, :autofocus => true, :required => true %>
+  <%= f.input :date, :required => true %>
+    <%= f.input :time, :required => true %>
+  <%= f.input :category, :collection => ["Guests", "Gifts & Registry", "Flowers & Decorations", "Food & Drinks", "Bride", "Ceremony", "Bridesmaids & Groomsmen"], :required => true %>
+
+  <%= f.input :location, :required => true %>
+    <%= f.input :description, :required => true, :input_html => { :class => "span6" }%>
+
+  <%= f.button :submit, "Edit Event", :class => 'btn-primary' %>
 <% end %>

@@ -27,10 +27,10 @@ class EventsController < ApplicationController
   def update
     @events = Event.find(params[:id])
     @events.update_attributes!(params[:event])
-    respond_to do |format|
-      format.html { redirect_to events_url }
-      format.js
-    end
+    # respond_to do |format|
+    #   format.html { redirect_to events_url }
+    #   format.js
+    # end
 
     redirect_to events_url, notice: "Event was successfully updated."
   end

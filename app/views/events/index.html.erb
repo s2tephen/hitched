@@ -1,4 +1,27 @@
-<table>
+<% provide(:title, "Your Dashboard") %>
+
+<br />
+
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <h3>Dashboard</h3>
+      <h2>Welcome back, Tiffany!</h2>
+      <p>You have <strong>2</strong> new notifications.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div id="tooltip" class="hidden">
+      <span id="name">Task name</span><i class="close icon-remove"></i><br />
+      <span id="when">Date here</span><br />
+      <hr />
+      <a href="event.html">View event &raquo;</a>
+      <div class="arrow"></div>
+    </div>
+    <div id="timeline" class="span12">
+      <h2>Your Timeline</h2>
+      <table>
   <tr>
     <th>Name</th>
     <th>Category</th>
@@ -7,16 +30,15 @@
 
     <th>Location</th>
     <th>Description</th>
-        <th>Notes</th>
+    <th>Notes</th>
 
-        <th></th>
-        <th></th>
-        <th></th>
+    <th></th>
+    <th></th>
   </tr>
 
   <% @events.each do |event| %>
   <tr>
-    <td><%= event.name %></td>
+    <td><%= link_to event.name, event %></td>
     <td><%= event.category %></td>
     <td><%= event.date %></td>
     <td><%= event.time %></td>
@@ -26,13 +48,17 @@
     <td><%= event.notes %></td>
 
     <!--     :category, :date, :description, :location, :name, :notes, :time, :wedding_id, :complete -->
-    <td><%= link_to 'Show', event %></td>
+
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Delete', event, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
   <% end %>
 </table>
+    </div>
+  </div>
 
-<br />
+</div> <!-- /container -->
+
+
 
 <%= link_to 'New Event', new_event_path %>
