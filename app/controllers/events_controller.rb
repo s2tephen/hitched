@@ -5,10 +5,10 @@ class EventsController < ApplicationController
 
   def show
     @events = Event.find(params[:id])
-    # @comments = @events.comments.paginate(page: params[:page])
-    # if @events.enabled != true
-    #   redirect_to root_path
-    # end
+    @comments = @events.comments.paginate(page: params[:page])
+    if @events.enabled != true
+      redirect_to events_url
+    end
   end
 
   def new
