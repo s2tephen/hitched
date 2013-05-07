@@ -29,7 +29,7 @@
           <div class="timeline-toggle" id="toggle-bride"><span class="label">&nbsp;</span>&emsp;Bride</div>
           <div class="timeline-toggle" id="toggle-ceremony"><span class="label">&nbsp;</span>&emsp;Ceremony</div>
         </div>
-        <div id="timeline" class="span9"></div>
+        <div id="timeline" class="span9" data-wedding="<%= current_user.wedding_id %>"></div>
       </div>
 
       <h2>List View</h2>
@@ -74,4 +74,3 @@
 </div> <!-- /container -->
 
 <%= link_to 'New Event', new_event_path %>
-
