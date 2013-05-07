@@ -1,28 +1,28 @@
 class WeddingsController < ApplicationController
   def show
-    @wedding = Wedding.find(params[:id])
+    @weddings = Wedding.find(params[:id])
   end
 
   def index
-    @wedding = Wedding.all
+    @weddings = Wedding.all
   end
 
   def new
-    @wedding = Wedding.new
+    @weddings = Wedding.new
   end
 
   def create
-    @wedding = Wedding.create!(params[:wedding])
+    @weddings = Wedding.create!(params[:wedding])
     redirect_to weddings_url, notice: "Wedding was successfully created."
   end
 
   def edit
-    @wedding = Wedding.find(params[:id])
+    @weddings = Wedding.find(params[:id])
   end
 
   def update
-    @wedding = Wedding.find(params[:id])
-    @wedding.update_attributes!(params[:wedding])
+    @weddings = Wedding.find(params[:id])
+    @weddings.update_attributes!(params[:wedding])
     redirect_to weddings_url, notice: "Wedding was successfully updated."
   end
 end

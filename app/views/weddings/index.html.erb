@@ -1,12 +1,28 @@
 <h1>Weddings</h1>
 
-<!-- <div id="weddings">
-<%# @weddings.each do |wedding| %>
-  <h2><%#= link_to wedding.name, wedding %></h2>
-  <%#= pluralize wedding.events.size, "event" %> |
-  <%#= link_to "Rename", edit_wedding_path(wedding) %> |
-  <%#= link_to "Destroy", wedding, confirm: "Are you sure?", method: "delete" %>
-<%# end %>
-</div> -->
+<table>
+	<tr>
+		<th>Date</th>
 
-<p><%= link_to "New Wedding", new_wedding_path %></p>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+
+	<% @weddings.each do |wedding| %>
+	<tr>
+
+		<td>
+			<%= wedding.date %>
+		</td>
+		<!--     :category, :date, :description, :location, :name, :notes, :time, :wedding_id, :complete -->
+		<td><%= link_to 'Show', wedding %></td>
+		<td><%= link_to 'Edit', edit_wedding_path(wedding) %></td>
+		<td><%= link_to 'Destroy', wedding, confirm: 'Are you sure?', method: :delete %></td>
+	</tr>
+	<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Wedding', new_wedding_path %>

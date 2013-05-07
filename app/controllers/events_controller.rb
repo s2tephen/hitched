@@ -1,24 +1,24 @@
 class EventsController < ApplicationController
   def index
-   @event = Event.all
+   @events = Event.all
   end
+
   def show
-    @event = Event.find(params[:id])
+    @events = Event.find(params[:id])
     @comments = @event.comments.paginate(page: params[:page])
     if @event.enabled != true
       redirect_to root_path
     end
   end
 
-
   def create
-    @event = Event.create!(params[:event])
+    @events = Event.create!(params[:event])
     redirect_to events_url
   end
 
   def update
-    @event = Event.find(params[:id])
-    @event.update_attributes!(params[:event])
+    @events = Event.find(params[:id])
+    @events.update_attributes!(params[:event])
     respond_to do |format|
       format.html { redirect_to events_url }
       format.js
@@ -26,7 +26,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = Event.destroy(params[:id])
+    @events = Event.destroy(params[:id])
     respond_to do |format|
       format.html { redirect_to events_url }
       format.js

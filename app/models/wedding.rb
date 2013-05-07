@@ -3,7 +3,6 @@ class Wedding < ActiveRecord::Base
   has_many :users
   has_many :events
 
-
   def incomplete_events
     events.where(complete: false)
   end
