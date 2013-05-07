@@ -15,7 +15,7 @@ $(document).ready(function(){
 
 		var y = d3.scale.linear()
 			.domain([0, 20])
-			.range([500, 0]);
+			.range([300, 0]);
 
 		var svg = d3.select("#timeline")
 					.append("svg")
@@ -34,14 +34,14 @@ $(document).ready(function(){
 			.scale(x)
 			.orient("bottom")
 			.ticks(d3.time.months, 1)
-			.tickSize(500, 0, 0)
+			.tickSize(300, 0, 0)
 	        .tickFormat("");
 
 	    var xWeeks = d3.svg.axis()
 			.scale(x)
 			.orient("bottom")
 			.ticks(d3.time.weeks, 1)
-			.tickSize(500, 0, 0)
+			.tickSize(300, 0, 0)
 	        .tickFormat("");
 
 		svg.append("g")         
@@ -74,7 +74,7 @@ $(document).ready(function(){
 			.attr('cx', function(d) {
 				return x(new Date(d.date));
 			})
-			.attr("cy", 450)
+			.attr("cy", 250)
 			.attr("stroke", function(d) {
 				return colors[d.category];
 			})
@@ -84,7 +84,7 @@ $(document).ready(function(){
 			.on('mouseover', function(d){
 				var width = $("#timeline").width();
 				var xPos = x(new Date(d.date))+$("#timeline").position().left-83;
-				var yPos = $("#timeline").position().top+320;
+				var yPos = $("#timeline").position().top+120;
 				d3.selectAll(".circle").transition()
 							.duration(100)
 							.attr("r", 8);
@@ -97,7 +97,8 @@ $(document).ready(function(){
 							.style("top", yPos + "px")
 							.style("border-top", "15px solid "+colors[d.category]);			
 				d3.select("#name").text(d.name);
-				d3.select("#when").text(new Date(d.date).toLocaleString("en-US", {weekday: "short", year: "numeric", month: "long", day: "numeric"})); 
+				d3.select("#when").text(new Date(d.date).toDateString());
+				d3.select("#tooltip-link").attr("href", "/events/"+d.id);
 			})
 
 		$(".close").click(function() {
@@ -115,7 +116,7 @@ $(document).ready(function(){
 				return x(new Date());
 			})
 			.attr("y1", 0)
-			.attr("y2", 500)
+			.attr("y2", 300)
 			.attr("stroke", "#666")
 			.attr("stroke-width", "2px");
 
@@ -124,7 +125,7 @@ $(document).ready(function(){
 			.attr("width", function() {
 				return x(new Date())-1;
 			})
-			.attr("height", 500)
+			.attr("height", 300)
 			.style("fill", "black")
 			.style("fill-opacity", "0.2");
 
