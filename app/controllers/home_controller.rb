@@ -1,5 +1,9 @@
 class HomeController < ApplicationController
   def index
-    @users = User.all
+  	if current_user != nil
+  		redirect_to events_url
+  	else
+    	@users = User.all
+    end
   end
 end
