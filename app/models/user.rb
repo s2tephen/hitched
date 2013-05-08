@@ -12,4 +12,12 @@ class User < ActiveRecord::Base
 
   has_many :comments
   has_one :wedding
+
+  after_initialize :default_values
+
+  def default_values
+    self.wedding_id = 1
+    self.name = "Tiffany"
+  end
+
 end

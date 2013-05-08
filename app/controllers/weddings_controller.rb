@@ -1,6 +1,7 @@
 class WeddingsController < ApplicationController
   def index
-    @weddings = Wedding.all
+    #@weddings = Wedding.all
+    redirect_to events_url, notice: "Your wedding timeline has been successfully created."
   end
 
   def show
