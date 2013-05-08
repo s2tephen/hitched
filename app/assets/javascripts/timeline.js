@@ -11,7 +11,7 @@ $(document).ready(function(){
 		var yVals = {"guests":40,"ceremony":200,"decorations":120,"food":80,"bridegroom":160,"gifts":240,"party":280};
 	    				
 		var x = d3.time.scale()
-			.domain([new Date(), new Date(2014, 2, 14)])
+			.domain([new Date(2013,5,8), new Date(2014, 2, 14)])
 			.range([0, 870]);
 
 		var y = d3.scale.linear()
@@ -75,7 +75,7 @@ $(document).ready(function(){
 			.attr('cx', function(d) {
 				return x(new Date(d.date));
 			})
-			.attr("cy", yVals[d.category])
+			.attr("cy", 250)
 			.attr("stroke", function(d) {
 				return colors[d.category];
 			})

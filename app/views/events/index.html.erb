@@ -36,40 +36,7 @@
         <div id="timeline" class="span9" data-wedding="<%= current_user.wedding_id %>" data-date="<%= Wedding.find(current_user.wedding_id).date %>"></div>
       </div>
 <hr>
-      <h2>Events List</h2>
-      <table>
-        <tr>
-          <th>Name</th>
-<!--           <th>Category</th> -->
-          <th>Date</th>
-          <th>Time</th>
-
-          <th>Location</th>
-          <th>Description</th>
-          <th>Notes</th>
-
-          <th></th>
-          <th></th>
-        </tr>
-
-        <% @events.each do |event| %>
-          <% if event.enabled == true %>
-            <tr>
-              <td><%= link_to event.name, event %></td>
-        <!--       <td><%= event.category %></td> -->
-              <td><%= event.date %></td>
-              <td><%= event.time %></td>
-
-              <td><%= event.location %></td>
-              <td><%= event.description %></td>
-              <td><%= event.notes %></td>
-
-              <td><%= link_to 'Edit', edit_event_path(event) %></td>
-              <td><%= link_to 'X', event, confirm: 'Are you sure you want to delete this event?', method: :delete %></td>
-            </tr>
-          <% end %>
-        <% end %>
-      </table>
+  
     </div>
   </div>
 
