@@ -7,10 +7,11 @@ $(document).ready(function(){
 	$.getJSON(url, function(data) {
 		dataset = data["events"];
 
-		var colors = {"guests":"#CE1836","ceremony":"#009989","decorations":"#EDB92E","food":"#F85931","bride":"#A3A948"};
+		var colors = {"guests":"#CE1836","ceremony":"#009989","decorations":"#EDB92E","food":"#F85931","bridegroom":"#A3A948","gifts":"#3443A6","party":"#492D61"};
+		var yVals = {"guests":40,"ceremony":200,"decorations":120,"food":80,"bridegroom":160,"gifts":240,"party":280};
 	    				
 		var x = d3.time.scale()
-			.domain([new Date(2013, 4, 1), new Date(2014, 2, 9)])
+			.domain([new Date(), new Date(2014, 2, 14)])
 			.range([0, 870]);
 
 		var y = d3.scale.linear()
@@ -74,7 +75,7 @@ $(document).ready(function(){
 			.attr('cx', function(d) {
 				return x(new Date(d.date));
 			})
-			.attr("cy", 250)
+			.attr("cy", yVals[d.category])
 			.attr("stroke", function(d) {
 				return colors[d.category];
 			})

@@ -28,10 +28,12 @@
           <div class="timeline-toggle" id="toggle-guests"><span class="label">&nbsp;</span>&emsp;Guests</div>
           <div class="timeline-toggle" id="toggle-food"><span class="label">&nbsp;</span>&emsp;Food & Drinks</div>
           <div class="timeline-toggle" id="toggle-decorations"><span class="label">&nbsp;</span>&emsp;Flowers & Decorations</div>
-          <div class="timeline-toggle" id="toggle-bride"><span class="label">&nbsp;</span>&emsp;Bride</div>
+          <div class="timeline-toggle" id="toggle-bridegroom"><span class="label">&nbsp;</span>&emsp;Bride & Groom</div>
           <div class="timeline-toggle" id="toggle-ceremony"><span class="label">&nbsp;</span>&emsp;Ceremony</div>
+          <div class="timeline-toggle" id="toggle-gifts"><span class="label">&nbsp;</span>&emsp;Gifts & Registry</div>
+          <div class="timeline-toggle" id="toggle-party"><span class="label">&nbsp;</span>&emsp;Wedding Party</div>
         </div>
-        <div id="timeline" class="span9" data-wedding="<%= current_user.wedding_id %>"></div>
+        <div id="timeline" class="span9" data-wedding="<%= current_user.wedding_id %>" data-date="<%= Wedding.find(current_user.wedding_id).date %>"></div>
       </div>
 <hr>
       <h2>Events List</h2>

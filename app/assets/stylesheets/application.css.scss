@@ -232,3 +232,98 @@ html[xmlns] .clearfix {
 * html .clearfix {
   height: 1%;
 }
+
+.timeline-toggle span {
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+.timeline-toggle:hover {
+  cursor: pointer;
+}
+
+.timeline-toggle:hover span {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.timeline-toggle.enabled span {
+  background-color: transparent !important;
+  border: 4px solid;
+  padding: 2px 8px 2px 8px;
+}
+
+#toggle-help {
+  font-weight: lighter;
+  font-style: italic;
+  margin: 10px;
+  color: #999;
+}
+
+#toggle-guests span {
+  background-color: #CE1836;
+}
+
+#toggle-guests.enabled span {
+  border-color: #CE1836;
+}
+
+#toggle-food span {
+  background-color: #f85931;
+}
+
+#toggle-food.enabled span {
+  border-color: #f85931;
+}
+
+#toggle-decorations span {
+  background-color: #edb92e;
+}
+
+#toggle-decorations.enabled span {
+  border-color: #edb92e;
+}
+
+#toggle-bride span {
+  background-color: #a3a948;
+}
+
+#toggle-bride.enabled span {
+  border-color: #a3a948;
+}
+
+#toggle-ceremony span {
+  background-color: #009989;
+}
+
+#toggle-ceremony.enabled span {
+  border-color: #009989;
+}
+
+#toggle-gifts span {
+  background-color: #a3a948;
+}
+
+#toggle-gifts.enabled span {
+  border-color: #a3a948;
+}
+
+#toggle-party span {
+  background-color: #009989;
+}
+
+#toggle-party.enabled span {
+  border-color: #009989;
+}
+
+#sidebar {
+  background-color: #eee;
+  height: 500px;
+  padding-left: 20px;
+  margin-right: -20px;
+}
+
+#sidebar h4 {
+  float: left;
+  padding-right: 10px;
+}
