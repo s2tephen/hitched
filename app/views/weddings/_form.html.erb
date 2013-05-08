@@ -3,7 +3,7 @@
 
 		<%= simple_form_for(@weddings, :html => {:class => 'form-vertical' }) do |f| %>
 		<%= f.input :date, :required => true , :autofocus => true, :label =>false, start_year: Date.today.year,
-                              end_year: Date.today.year + 4, order: [:month, :day, :year]%>
+                              end_year: Date.today.year + 1, order: [:month, :day, :year]%>
 
 		<%= f.button :submit, "Finish", :class => 'btn-primary ' %>
 		<% end %>

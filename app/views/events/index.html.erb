@@ -23,7 +23,7 @@
         <div id="sidebar" class="span3">
           <h4>TASKS</h4>
           <div class="timeline-toggle" id="toggle-help">Click to toggle</div>
-          
+
           <div class="timeline-toggle" id="toggle-guests"><span class="label">&nbsp;</span>&emsp;Guests</div>
           <div class="timeline-toggle" id="toggle-food"><span class="label">&nbsp;</span>&emsp;Food & Drinks</div>
           <div class="timeline-toggle" id="toggle-decorations"><span class="label">&nbsp;</span>&emsp;Flowers & Decorations</div>
@@ -37,7 +37,7 @@
       <table>
         <tr>
           <th>Name</th>
-          <th>Category</th>
+<!--           <th>Category</th> -->
           <th>Date</th>
           <th>Time</th>
 
@@ -53,7 +53,7 @@
           <% if event.enabled == true %>
             <tr>
               <td><%= link_to event.name, event %></td>
-              <td><%= event.category %></td>
+        <!--       <td><%= event.category %></td> -->
               <td><%= event.date %></td>
               <td><%= event.time %></td>
 
@@ -62,7 +62,7 @@
               <td><%= event.notes %></td>
 
               <td><%= link_to 'Edit', edit_event_path(event) %></td>
-              <td><%= link_to 'Delete', event, confirm: 'Are you sure?', method: :delete %></td>
+              <td><%= link_to 'X', event, confirm: 'Are you sure you want to delete this event?', method: :delete %></td>
             </tr>
           <% end %>
         <% end %>
