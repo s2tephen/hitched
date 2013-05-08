@@ -17,7 +17,6 @@ class User < ActiveRecord::Base
 
   def default_values
     self.wedding_id = 1
-    self.name = "Tiffany"
   end
 
 end
