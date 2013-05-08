@@ -10,7 +10,7 @@ $(document).ready(function(){
 		var colors = {"guests":"#CE1836","ceremony":"#009989","decorations":"#EDB92E","food":"#F85931","bride":"#A3A948"};
 	    				
 		var x = d3.time.scale()
-			.domain([new Date(2013, 0, 1), new Date(2013, 5, 31)])
+			.domain([new Date(2013, 4, 1), new Date(2013, 10, 31)])
 			.range([0, 870]);
 
 		var y = d3.scale.linear()

@@ -1,18 +1,6 @@
-<% provide(:title, "Your Dashboard") %>
-<div class="row">
-	<div class="span12">
-		<h3>Dashboard</h3>
-	</div>
-</div>
+<% provide(:title, "Wedding") %>
 
 <h1><%= @weddings.date %></h1>
-
-<div id="wedding">
-  <%= form_for @weddings.events.build do |f| %>
-    <%= f.hidden_field :wedding_id %>
-    <%= f.text_field :date %>
-    <%= f.submit %>
-  <% end %>
 
   <p><%= link_to "Back to Weddings", weddings_path %></p>
 </div>

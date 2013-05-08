@@ -1,20 +1,20 @@
 <div class="row">
 	<div class="span6">
-<%= simple_form_for(@events, :html => {:class => 'form-vertical' }) do |f| %>
-  <%= f.input :name, :autofocus => true, :required => true , :input_html => { :class => "span6"}%>
-  <%= f.input :date, :required => true %>
-    <%= f.input :time, :required => true %>
-  <%= f.input :category, :collection => ["guests", "ceremony", "decorations", "food", "bride"], :required => true , :input_html => { :class => "span6"}%>
+		<%= simple_form_for(@events, :html => {:class => 'form-vertical' }) do |f| %>
+		<%= f.input :name, :autofocus => true, :required => true , :input_html => { :class => "span6"}%>
+		<%= f.input :date, :required => true %>
+		<%= f.input :time, :required => true %>
+		<%= f.input :category, :collection => ["guests", "ceremony", "decorations", "food", "bride"], :required => true , :input_html => { :class => "span6"}%>
 
-  <%= f.input :location, :required => true , :input_html => { :class => "span6"}%>
-    <%= f.input :description, :required => true, :input_html => { :class => "span6" }%>
+		<%= f.input :location, :required => true , :input_html => { :class => "span6"}%>
+		<%= f.input :description, :required => true, :input_html => { :class => "span6" }%>
 
-        <%= f.input :wedding_id, :required => true, :input_html => { :class => "span6" }%>
+		<%#= f.input :wedding_id, :required => true, :input_html => { :class => "span6" }%>
 
-  <%= f.button :submit, "Edit Event", :class => 'btn-primary span4 btn-block' %>
-<% end %>
+		<%= f.button :submit, "Edit Event", :class => 'btn-primary span4 btn-block' %>
+		<% end %>
 
-</div>
+	</div>
 </div>
 
 
