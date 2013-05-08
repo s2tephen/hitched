@@ -1,3 +1,10 @@
 <h3>User</h3>
 <p>User: <%= @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
+
+<%= simple_form_for(@user, :html => {:class => 'form-vertical' }) do |f| %>
+
+        <%= f.input :wedding_id, :required => true, :input_html => { :class => "span6" }%>
+
+  <%= f.button :submit, "Edit User", :class => 'btn-primary span4 btn-block' %>
+<% end %>

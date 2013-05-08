@@ -4,13 +4,18 @@
   <%= f.input :name, :autofocus => true, :required => true , :input_html => { :class => "span6"}%>
   <%= f.input :date, :required => true %>
     <%= f.input :time, :required => true %>
-  <%= f.input :category, :collection => ["Guests", "Gifts & Registry", "Flowers & Decorations", "Food & Drinks", "Bride", "Ceremony", "Bridesmaids & Groomsmen"], :required => true , :input_html => { :class => "span6"}%>
+  <%= f.input :category, :collection => ["guests", "ceremony", "decorations", "food", "bride"], :required => true , :input_html => { :class => "span6"}%>
 
   <%= f.input :location, :required => true , :input_html => { :class => "span6"}%>
     <%= f.input :description, :required => true, :input_html => { :class => "span6" }%>
+
+        <%= f.input :wedding_id, :required => true, :input_html => { :class => "span6" }%>
 
   <%= f.button :submit, "Edit Event", :class => 'btn-primary span4 btn-block' %>
 <% end %>
 
 </div>
 </div>
+
+
+<!-- ["Guests", "Gifts & Registry", "Flowers & Decorations", "Food & Drinks", "Bride", "Ceremony", "Bridesmaids & Groomsmen"] -->
