@@ -18,9 +18,69 @@
   margin: -20px -20px; /* negative indent the amount of the padding to maintain the grid system */
 }
 
+$guests: #CE1836;
+$food: #f85931;
+$decorations: #edb92e;
+$bridegroom: #a3a948;
+$ceremony: #009989;
+$gifts: #3443A6;
+$party: #492D61;
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+.guests-color{
+  background-color:$guests;
+
+  a{
+    color:$guests;
+  }
+  }
+
+
+.food-color{
+  background-color:$food;
+   a{
+    color:$food;
+  }
+}
+
+.decorations-color{
+  background-color:$decorations;
+   a{
+    color:$decorations;
+  }
+}
+
+.bridegroom-color{
+  background-color:$bridegroom;
+   a{
+    color:$bridegroom;
+  }
+}
+
+.ceremony-color{
+  background-color:$ceremony;
+   a{
+    color:$ceremony;
+  }
+}
+
+.gifts-color{
+  background-color:$gifts;
+   a{
+    color:$gifts;
+  }
+}
+
+.party-color{
+  background-color:$party;
+   a{
+    color:$party;
+  }
+}
+
 
 
 .landing-comments{
@@ -261,59 +321,60 @@ html[xmlns] .clearfix {
 }
 
 #toggle-guests span {
-  background-color: #CE1836;
+  background-color: $guests;
 }
 
 #toggle-guests.enabled span {
-  border-color: #CE1836;
+  border-color: $guests;
 }
 
+
 #toggle-food span {
-  background-color: #f85931;
+  background-color: $food;
 }
 
 #toggle-food.enabled span {
-  border-color: #f85931;
+  border-color: $food;
 }
 
 #toggle-decorations span {
-  background-color: #edb92e;
+  background-color: $decorations;
 }
 
 #toggle-decorations.enabled span {
-  border-color: #edb92e;
+  border-color: $decorations;
 }
 
 #toggle-bridegroom span {
-  background-color: #a3a948;
+  background-color: $bridegroom;
 }
 
 #toggle-bridegroom.enabled span {
-  border-color: #a3a948;
+  border-color: $bridegroom;
 }
 
 #toggle-ceremony span {
-  background-color: #009989;
+  background-color: $ceremony;
 }
 
 #toggle-ceremony.enabled span {
-  border-color: #009989;
+  border-color: $ceremony;
 }
 
 #toggle-gifts span {
-  background-color: #3443A6;
+  background-color: $gifts;
 }
 
 #toggle-gifts.enabled span {
-  border-color: #3443A6;
+  border-color: $gifts;
 }
 
 #toggle-party span {
-  background-color: #492D61;
+  background-color: $party;
 }
 
 #toggle-party.enabled span {
-  border-color: #492D61;
+  border-color: $party;
 }
 
 #sidebar {
