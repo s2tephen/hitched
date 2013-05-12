@@ -1,0 +1,4 @@
+<%= form_for [@events, Comment.new] do |f| %>
+  <%= f.text_area :content, :id => "comment-field", :class => "span4", placeholder: "Add a comment...", rows: 5 %>
+  <%= f.submit "Post", class: "btn btn-info", :attr => "disabled" %>
+<% end %>

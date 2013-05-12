@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   has_many :comments
   has_one :wedding
 
+  acts_as_reader
+
   after_initialize :default_values
 
   def default_values

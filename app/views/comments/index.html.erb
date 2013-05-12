@@ -1,0 +1,19 @@
+<% provide(:title, "Comments") %>
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <h2>Comments</h2>
+      <% Comment.unread_by(current_user).reverse_each do |comment|  %>
+      	<div class="comment">
+	      	<p><strong><%= User.find(Comment.find(comment).user_id).name %></strong> posted on <a href="/events/<%= Comment.find(comment).event_id %>"><%= Event.find(Comment.find(comment).event_id).name %></a>.</p>
+	      	<p><em><%= Comment.find(comment).content %></em></p>
+	      	<span class="timestamp">Posted <%= time_ago_in_words(Comment.find(comment).created_at) %> ago</span>
+	      	<br />
+	    </div>
+      <% end %>
+      <% if Comment.unread_by(current_user).empty? %>
+      	<p>You have no unread comments.</p>
+      <% end %>
+    </div>
+  </div>
+</div>

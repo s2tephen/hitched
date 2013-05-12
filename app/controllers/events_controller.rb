@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 
   def show
     @events = Event.find(params[:id])
-    @comments = @events.comments.paginate(page: params[:page])
+    @comments = @events.comments.paginate(page: params[:page], per_page: 5, :order => 'created_at DESC')
     if @events.enabled != true
       redirect_to events_url
     end
@@ -32,7 +32,7 @@ class EventsController < ApplicationController
     #   format.js
     # end
 
-    redirect_to events_url, notice: "Event was successfully updated."
+    redirect_to @events, notice: "Event was successfully updated."
   end
 
   def destroy

@@ -5,6 +5,13 @@
     <div class="span12">
       <h2>Dashboard</h2>
       <h3>Welcome back, <%= current_user.name %>!</h3>
+      <% if Comment.unread_by(current_user).collect(&:event_id).length == 0 %>
+        <p>You currently have no unread comments.</p>
+      <% elsif Comment.unread_by(current_user).collect(&:event_id).length == 1 %>
+        <p>You currently have <a href="/comments/">1 unread comment</a>.</p>
+      <% else %>
+        <p>You currently have <a href="/comments/"><%= Comment.unread_by(current_user).collect(&:event_id).length %> unread comments</a>.</p>
+      <% end %>
     </div>
   </div>
 
@@ -12,14 +19,18 @@
 
   <div class="row">
     <div id="tooltip" class="hidden">
-      <span id="name">Task name</span><i class="close icon-remove"></i><br />
-      <span id="when">Date here</span><br />
+      <div id="name">Task name</div><i class="close icon-remove"></i>
+      <div id="when">Date here</div>
       <hr />
       <a href="" id="tooltip-link">View event &raquo;</a>
       <div class="arrow"></div>
     </div>
-    <div class="span12">
+    <div class="span12" id="timeline-sec">
       <h3>Timeline</h3>
+      <div class="btn-group">
+        <button id="stacked" class="timeline-view btn active">Stacked View</button>
+        <button id="combined" class="timeline-view btn">Combined View</button>
+      </div>
       <div class="row">
         <div id="sidebar" class="span3">
           <h4>TASKS</h4>
@@ -33,7 +44,7 @@
           <div class="timeline-toggle" id="toggle-gifts"><span class="label">&nbsp;</span>&emsp;Gifts & Registry</div>
           <div class="timeline-toggle" id="toggle-party"><span class="label">&nbsp;</span>&emsp;Wedding Party</div>
         </div>
-        <div id="timeline" class="span9" data-wedding="<%= current_user.wedding_id %>" data-date="<%= Wedding.find(current_user.wedding_id).date %>"></div>
+        <div id="timeline" class="span9" data-wedding="<%= current_user.wedding_id %>" data-date="<%= Wedding.find(current_user.wedding_id).date %>" data-created="<%= Wedding.find(current_user.wedding_id).created_at %>"></div>
       </div>
 
     <hr>

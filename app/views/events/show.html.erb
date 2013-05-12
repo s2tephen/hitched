@@ -30,8 +30,10 @@
 			<%= will_paginate @comments %>
 
 		<% else %>
-			No comments.
+			<div id="nocomments">No comments.</div>
 		<% end %>
+
+		<%= render :partial => '/comments/form', :event_id => @events.id %>
 	</div>
 </div>
 
